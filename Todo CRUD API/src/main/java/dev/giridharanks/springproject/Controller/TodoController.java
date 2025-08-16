@@ -1,4 +1,4 @@
-package dev.giridharanks.springproject;
+package dev.giridharanks.springproject.Controller;
 
 import java.util.List;
 
@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import dev.giridharanks.springproject.Model.Todo;
+import dev.giridharanks.springproject.Service.TodoService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 

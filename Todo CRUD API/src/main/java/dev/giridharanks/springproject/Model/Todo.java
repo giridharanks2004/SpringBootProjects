@@ -1,4 +1,4 @@
-package dev.giridharanks.springproject;
+package dev.giridharanks.springproject.Model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
