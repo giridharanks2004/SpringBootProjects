@@ -23,44 +23,13 @@ public class TodoController {
     @Autowired
     public TodoService a;
 
-    @GetMapping("/get")
-    public String get(){
-        return "getting";
-    }
-
-    @GetMapping("/1") // sub requests
-    public String todo(){
-        return "todo";
-    }
-
-    @GetMapping("/{id}") // path variable
-    public String todobyid(@PathVariable int id){
-        return "todo id "+id;
-    }
-    // request param custom name
-    @GetMapping("/")
-    public String todobyidreq(@RequestParam("todoid") int id){
-        if(id == 20){
-            return "id is matched!";
-        }
-        return "id mismatch";
-    }
-    //user id pwd
-    @GetMapping("/create")
-    public String creatac(@RequestParam String uid,@RequestParam String pass){
-        if(uid.equals("giri") && pass.equals("ksg")){
-            return "welcome home " + uid;
-        }
-        return "poda veliya";
-    }
-
-    @PostMapping("/createtodo")
+    @PostMapping("/createtodo") // create a todo
     public ResponseEntity<Todo> create(@RequestBody Todo newEvent){
         ResponseEntity<Todo> response = new ResponseEntity<>(a.createTodo(newEvent),HttpStatus.CREATED);
         return response;
     }
 
-    @GetMapping("/getbyid")
+    @GetMapping("/getbyid") // get todo by id 
     public ResponseEntity<Todo> getbytoid(@RequestParam Integer id){
         try{
             return new ResponseEntity<>(a.getbyTodoid(id),HttpStatus.OK);
