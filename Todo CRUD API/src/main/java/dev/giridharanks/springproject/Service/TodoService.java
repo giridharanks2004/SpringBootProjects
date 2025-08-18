@@ -15,7 +15,7 @@ public class TodoService {
         return todo_ob.save(newTodo);
     }
     public Todo getbyTodoid(Integer id){ //read by id
-        return todo_ob.findById(id).orElseThrow(()->new RuntimeException("todo not found"));
+        return todo_ob.findById(id).orElse(null);
     }
     public List<Todo> getallTodos(){ // read
         return todo_ob.findAll();

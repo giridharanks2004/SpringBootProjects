@@ -37,12 +37,12 @@ public class TodoController {
     }
 
     @GetMapping("/getbyid") // get todo by id 
-    public ResponseEntity<Todo> getbytoid(@RequestParam Integer id){
+    public ResponseEntity<?> getbytoid(@RequestParam Integer id){
         try{
             return new ResponseEntity<>(con.getbyTodoid(id),HttpStatus.OK);
             
         } catch(RuntimeException exception){
-            return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("not found",HttpStatus.NOT_FOUND);
         } 
     }
     @GetMapping("/all") // read all todos
